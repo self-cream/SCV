@@ -57,15 +57,18 @@ func (in CardList) Swap(i, j int) {
 }
 
 type Card struct {
-	ID          uint   `json:"id"`
-	Health      string `json:"health,omitempty"`
-	Model       string `json:"model,omitempty"`
-	Power       uint   `json:"power,omitempty"`
-	TotalMemory uint64 `json:"totalMemory,omitempty"`
-	Clock       uint   `json:"clock,omitempty"`
-	FreeMemory  uint64 `json:"freeMemory,omitempty"`
-	Core        uint   `json:"core,omitempty"`
-	Bandwidth   uint   `json:"bandwidth,omitempty"`
+	ID              uint   `json:"id"`
+	Health          string `json:"health,omitempty"`
+	Model           string `json:"model,omitempty"`
+	Power           uint   `json:"power,omitempty"`
+	TotalMemory     uint64 `json:"totalMemory,omitempty"`
+	Clock           uint   `json:"clock,omitempty"`
+	FreeMemory      uint64 `json:"freeMemory,omitempty"`
+	Core            uint   `json:"core,omitempty"`
+	Bandwidth       uint   `json:"bandwidth,omitempty"`
+	AffinityTag     []string `json:"affinityTags"`
+	AntiAffinityTag []string `json:"antiAffinityTags"`
+	ExclusionTag    []string `json:"exclusionTags"`
 }
 
 // +kubebuilder:object:root=true
